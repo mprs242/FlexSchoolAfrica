@@ -4,3 +4,17 @@
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeZoom {
+  animation: fadeZoom 0.5s ease-out forwards;
+}

@@ -5,7 +5,7 @@ export default function About() {
         {/* Titre */}
         <div className="text-center mb-12">
           <h3 className="text-4xl font-extrabold text-gray-900 mb-4">
-            Qui sommes-nous ?
+            Notre histoire
           </h3>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             FlexSchoolAfrica est né d’une histoire commune : celle de jeunes

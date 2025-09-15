@@ -6,7 +6,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo + nom */}
@@ -14,9 +14,8 @@ export default function Header() {
             <img
               src={logo}
               alt="Logo FlexSchoolAfrica"
-              className="h-20 w-auto" // ← agrandi (16 au lieu de 10)
+              className="h-20 w-auto"
             />
-
             <span className="font-bold text-indigo-600 text-lg hidden sm:block">
               FlexSchoolAfrica
             </span>
@@ -105,7 +104,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               className="hover:text-indigo-600"
             >
-              Qui sommes-nous
+              Notre histoire
             </Link>
             <Link
               to="/how"
