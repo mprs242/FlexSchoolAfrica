@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"; // ✅ import du logo
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,12 +9,20 @@ export default function Header() {
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <h1 className="text-2xl font-bold text-indigo-600">
-            FlexSchoolAfrica
-          </h1>
+          {/* Logo + nom */}
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src={logo}
+              alt="Logo FlexSchoolAfrica"
+              className="h-20 w-auto" // ← agrandi (16 au lieu de 10)
+            />
 
-          {/* Desktop navigation */}
+            <span className="font-bold text-indigo-600 text-lg hidden sm:block">
+              FlexSchoolAfrica
+            </span>
+          </Link>
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex space-x-6">
             <Link to="/" className="hover:text-indigo-600">
               Accueil
@@ -38,14 +47,13 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-indigo-600 focus:outline-none"
             >
               {isOpen ? (
-                // X icon
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -61,7 +69,6 @@ export default function Header() {
                   />
                 </svg>
               ) : (
-                // Hamburger icon
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -82,7 +89,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile menu */}
       {isOpen && (
         <nav className="md:hidden bg-white shadow-lg border-t">
           <div className="px-4 py-4 space-y-4 flex flex-col">
