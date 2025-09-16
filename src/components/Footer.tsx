@@ -12,24 +12,42 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white py-12 mt-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center space-y-12">
         {/* Présence internationale */}
-        <h4 className="text-2xl font-bold mb-8">Nous sommes déjà présents</h4>
+        <div>
+          <h4 className="text-2xl font-bold mb-8">Nous sommes déjà présents</h4>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {countries.map((country) => (
+              <div
+                key={country.name}
+                className="bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition"
+              >
+                <span className="text-4xl">{country.flag}</span>
+                <h5 className="mt-3 font-semibold">{country.name}</h5>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
-          {countries.map((country) => (
-            <div
-              key={country.name}
-              className="bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition"
-            >
-              <span className="text-4xl">{country.flag}</span>
-              <h5 className="mt-3 font-semibold">{country.name}</h5>
-            </div>
-          ))}
+        {/* Navigation footer */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-400 text-sm">
+          <Link to="/" className="hover:text-white">
+            Accueil
+          </Link>
+          <Link to="/domains" className="hover:text-white">
+            Domaines
+          </Link>
+          <Link to="/tarifs" className="hover:text-white">
+            Tarifs
+          </Link>{" "}
+          {/* ✅ ajouté */}
+          <Link to="/contact" className="hover:text-white">
+            Contact
+          </Link>
         </div>
 
         {/* Bouton CTA */}
-        <div className="mb-12">
+        <div>
           <Link
             to="/contact"
             className="inline-block px-10 py-4 text-lg font-bold text-white rounded-full shadow-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:scale-105 transform transition"
@@ -39,7 +57,7 @@ export default function Footer() {
         </div>
 
         {/* Réseaux sociaux */}
-        <div className="flex justify-center space-x-6 mb-6">
+        <div className="flex justify-center space-x-6">
           <a
             href="https://facebook.com"
             target="_blank"

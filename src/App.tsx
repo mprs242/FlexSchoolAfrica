@@ -9,6 +9,7 @@ import Domains from "./pages/Domains";
 import Partners from "./pages/Partners";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
+import Tarifs from "./pages/Tarifs"; // ✅ import
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/tarifs" element={<Tarifs />} /> {/* ✅ nouvelle page */}
         </Routes>
       </main>
       <Footer />
